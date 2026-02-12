@@ -1,0 +1,5 @@
+1.what is sub view.
+make subview.
+use subview.
+pass data from view to subview.
+check if subview exists.

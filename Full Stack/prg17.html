@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Company Details</h2>
+    <p id="output"></p>
+
+    <script>
+       
+        class Company {
+            constructor() {
+                this.name = "";
+                this.type = "";
+                this.profile = "";
+            }
+
+            
+            setCompany(name, type, profile) {
+                this.name = name;
+                this.type = type;
+                this.profile = profile;
+            }
+
+           
+            getCompany() {
+                return `
+                    Name: ${this.name}<br>
+                    Type: ${this.type}<br>
+                    Profile: ${this.profile}
+                `;
+            }
+        }
+
+        
+        const company1 = new Company();
+
+        
+        company1.setCompany("Tech", "cs", "Software Development");
+
+        
+        document.getElementById("output").innerHTML = company1.getCompany();
+    </script>
+</body>
+</html>

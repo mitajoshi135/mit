@@ -1,0 +1,87 @@
+CREATE TABLE artists (
+    artist_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    stage_name VARCHAR(100) NOT NULL,
+    legal_name VARCHAR(150),
+    country VARCHAR(50),
+    debut_year INT CHECK (debut_year >= 1900),
+    artist_type VARCHAR(10) CHECK (artist_type IN ('Solo', 'Band')),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE albums (
+    album_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    artist_id INT NOT NULL,
+    album_title VARCHAR(50) NOT NULL,
+    release_date DATE,
+    album_type VARCHAR(20)
+        CHECK (album_type IN ('Studio', 'EP', 'Single', 'Live')),
+    total_tracks INT CHECK (total_tracks >= 0),
+    FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+);
+-
+
+
+CREATE TABLE contracts (
+    contract_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    artist_id INT NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE,
+    contract_type VARCHAR(20)
+        CHECK (contract_type IN ('Exclusive', 'Non-Exclusive')),
+    royalty_rate NUMERIC(5,2)
+        CHECK (royalty_rate BETWEEN 0 AND 100),
+    FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+);
+-
+
+CREATE TABLE payments (
+    payment_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    artist_id INT NOT NULL,
+    amount NUMERIC(10,2) CHECK (amount > 0),
+    payment_date DATE NOT NULL,
+    payment_method VARCHAR(20)
+        CHECK (payment_method IN ('Bank Transfer', 'Cheque', 'UPI')),
+    FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+);
+
+
+CREATE TABLE royalties (
+    royalty_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    contract_id INT NOT NULL,
+    track_id INT NOT NULL,
+    royalty_amount NUMERIC(10,2) CHECK (royalty_amount >= 0),
+    royalty_date DATE NOT NULL,
+    FOREIGN KEY (contract_id) REFERENCES contracts(contract_id),
+    FOREIGN KEY (track_id) REFERENCES tracks(track_id)
+);
+
+
+CREATE TABLE tracks (
+    track_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    album_id INT NOT NULL,
+    track_title VARCHAR(150) NOT NULL,
+    duration_seconds INT CHECK (duration_seconds > 0),
+    is_single BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (album_id) REFERENCES albums(album_id) ON DELETE CASCADE
+);
+
+CREATE TABLE streaming_platforms (
+    platform_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    platform_name VARCHAR(100) UNIQUE NOT NULL
+);
+
+
+CREATE TABLE track_streams (
+    stream_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    track_id INT NOT NULL,
+    platform_id INT NOT NULL,
+    stream_count BIGINT CHECK (stream_count >= 0),
+    report_month DATE NOT NULL,
+    FOREIGN KEY (track_id) REFERENCES tracks(track_id),
+    FOREIGN KEY (platform_id) REFERENCES streaming_platforms(platform_id),
+    UNIQUE (track_id, platform_id, report_month)
+);
+
+
+

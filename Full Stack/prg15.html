@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    class Person {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        get_person() {
+            document.write("Name: " + this.name + "<br>");
+            document.write("Age: " + this.age);
+        }
+    }
+
+    
+    let p1 = new Person("Alice", 25);
+    p1.get_person();
+</script>
+
+</body>
+</html>

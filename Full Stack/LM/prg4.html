@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class cricketer{
+            constructor(cid,name,country){
+            this.cid=cid;
+            this.name=name;
+            this.country=country;
+        }
+        setcountry(country){
+            this.country=country;
+        }
+        getcountry(){
+            return this.country=country;
+        }
+    }
+        class bowler extends cricketer{
+            setbowler(wickets,matches){
+                this.wickets=wickets;
+                this.matches=matches;
+            }
+            getbowler(){
+                document.writeln("<br>bowler id:",this.cid);
+                document.writeln("<br>name:",this.name);
+                document.writeln("<br>country:",this.country);
+                document.writeln("<br>wickets:",this.wickets);
+                document.writeln("<br>matches:",this.matches);
+                
+            }
+        }
+        class batsman extends cricketer{
+            setbatsman(runs,matches){
+                this.runs=runs;
+                this.matches=matches; 
+            }
+            getbatsman(){
+                document.writeln("<br>batsman id:",this.cid);
+                document.writeln("<br>name:",this.name);
+                document.writeln("<br>country:",this.country);
+                document.writeln("<br>runs:",this.runs);
+                document.writeln("<br>matches:",this.matches);
+                
+            }
+        }
+        const bowler1=new bowler(1,"bumrah","india");
+        bowler1.setbowler(250,150);
+        bowler1.getbowler();
+        const batsman1=new batsman(1,"virat","india");
+        batsman1.setbatsman(25000,280);
+        batsman1.getbatsman();
+        
+    </script>
+</body>
+</html>

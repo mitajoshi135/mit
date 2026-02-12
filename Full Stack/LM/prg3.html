@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class company{
+            setcompany(name,type,profit){
+                this.name="name";
+                this.type="type";
+                this.profit="profit";
+            }
+            getCompany(){
+                console.log("company name",this.name);
+                console.log("company type",this.type);
+                console.log("company profit",this.profit);
+            }
+        }
+        const s1=new company();
+        s1.setcompany("zara","fashion","20cr");
+        s1.getCompany();
+    </script>
+</body>
+</html>

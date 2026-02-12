@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.writeln("x = 5 , y = 10")
+        
+        const e1=(x,y)=>(x*x)+(y*y)+(x*y)
+        const e2=(x,y,z)=>(x+y)-(y-z)
+        const e3=(x,y)=>(x*x)+(y*y)-(2*x*y)
+        document.writeln("<br>x^2+y^2+xy : ",e1(5,10));
+        document.writeln("<br>(x+y)-(y+z) : ",e2(5,10,15));
+        document.writeln("<br>x^2+y^2-2xy : ",e3(5,10));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Example</title>
+</head>
+<body>
+
+    <p>Dept</p>
+    <input type="text" id="deptin"><br>
+
+    <p>Course</p>
+    <input type="text" id="crsin"><br><br>
+
+    <button onclick="setValues()">Set values</button>
+    <button onclick="getValues()">Get values</button>
+
+    <p id="output"></p>
+
+    <script>
+        class Student {
+            constructor(dept, course) {
+                this.dept = dept;
+                this.course = course;
+            }
+
+            setDept(value) {
+                this.dept = value;
+            }
+
+            getDept() {
+                return this.dept;
+            }
+
+            setCourse(value) {
+                this.course = value;
+            }
+
+            getCourse() {
+                return this.course;
+            }
+        }
+
+        let studentObj = new Student("beginner", "javascript");
+
+        function setValues() {
+            studentObj.setDept(document.getElementById("deptin").value);
+            studentObj.setCourse(document.getElementById("crsin").value);
+
+            document.getElementById("output").innerText =
+                "Values set successfully!";
+        }
+
+        function getValues() {
+            document.getElementById("output").innerText =
+                "Dept: " + studentObj.getDept() +
+                " | Course: " + studentObj.getCourse();
+        }
+    </script>
+
+</body>
+</html>

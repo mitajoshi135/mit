@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=10
+        function ex(){
+            var a=5
+            document.writeln("inside function : "+a+"<br>")
+
+        }
+        document.writeln("outside function : "+a+"<br>")
+        ex()
+
+        let b=10
+        function ex1(){
+            const b=5
+            
+            document.writeln("inside function : "+b+"<br>")
+
+        }
+        b=15
+        document.writeln("outside function : "+b+"<br>")
+        ex1()
+    </script>
+</body>
+</html>

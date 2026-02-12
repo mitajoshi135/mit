@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Num 1:<input type="number" id="num1">
+    Num 2:<input type="number" id="num2"><br>
+    
+    <br><button onclick="sum()" value="sum">sum</button>
+    <br><button onclick="sub()" value="sub">sub</button>
+    <br><button onclick="mult()" value="mult">mult</button>
+    <br> <button onclick="div()" value="div">div</button><br>
+    Ans :<input type="number" id="ans">
+    <script>
+        function sum() {
+            let a = Number(document.getElementById("num1").value)
+            let b = Number(document.getElementById("num2").value)
+            let c = a + b
+            document.getElementById("ans").value = c
+        }
+        function sub() {
+            let a = document.getElementById("num1").value
+            let b = document.getElementById("num2").value
+            let c = a - b
+            document.getElementById("ans").value=c
+        }
+        function mult() {
+            let a = document.getElementById("num1").value
+            let b = document.getElementById("num2").value
+            let c = a * b
+            document.getElementById("ans").value = c
+        }
+        function div() {
+            let a = document.getElementById("num1").value
+            let b = document.getElementById("num2").value
+            let c = a / b
+            document.getElementById("ans").value = c
+        }
+    </script>
+</body>
+
+</html>

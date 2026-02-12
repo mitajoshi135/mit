@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+</head>
+<body>
+
+    <h2>Student Details</h2>
+    <p id="output"></p>
+
+    <script>
+        class Student {
+            constructor() {
+                
+                this.name = "John";
+                this.age = 20;
+            }
+
+            getStudent() {
+                document.getElementById("output").innerHTML =
+                    "Name: " + this.name + "<br>" +
+                    "Age: " + this.age;
+            }
+        }
+
+        
+        const s = new Student();
+
+        
+        s.getStudent();
+    </script>
+
+</body>
+</html>
