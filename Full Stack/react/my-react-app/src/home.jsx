@@ -5,12 +5,14 @@ import Footer from "./footer";
 
 function Home() {
   return (
-    <table border='2'>
-        <tr ><td colspan='2'>
-    <Header header="this is Header"/></td></tr>
-    <tr><td><Menu menu="this is Menu"/></td><td>
-    <Content content="this is Content"/></td></tr>
-    <tr ><td colspan='2'><Footer footer="this is Footer"/></td></tr>
+    
+    <table width='100%' border='2' height='780px' >
+    <tr ><td colspan='4'>
+    <Header header="Header"/></td></tr>
+    <tr><td colspan='1'><Menu menu="Menu"/></td><td colspan='3'>
+    <Content content="Content"/></td></tr>
+    <tr ><td colspan='4'>
+    <Footer footer="Footer"/></td></tr>
     </table>
   );
 }
