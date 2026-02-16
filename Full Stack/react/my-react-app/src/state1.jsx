@@ -36,3 +36,5 @@ class Student extends Component {
 }
 
 export default Student;
+
+git config --global user.email "your-github-email@example.com"
