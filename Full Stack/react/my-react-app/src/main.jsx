@@ -1,21 +1,23 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom/client';
-// // import Student from './cl';
-// // import Home from './home';
-// import './index.css'
-// // import App from './App';
-// // import Counter from './counter';
-// import Students1 from './btnstate';
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-//     {/* <Home /> */}
-//     {/* <Student /> */}
-//     {/* <App /> */}
-//     {/* <Counter/> */}
-
-//   </React.StrictMode>
-// );
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+// import Student from './cl';
+// import Home from './home';
+//  import './index.css'
+// import App from './App';
+// import Counter from './counter';
+//  import Students1 from './btnstate';
+// import Colorbtn from "./colorbtn";
+import Favcolor from './favcolor';
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    {/* <Home /> */}
+    {/* <Student /> */}
+    {/* <App /> */}
+    {/* <Counter/> */}
+    {/* <Colorbtn /> */}
+    <Favcolor />
+  </React.StrictMode>
+);
 
 // import React from "react";
 // import ReactDOM from "react-dom/client";
@@ -32,19 +34,19 @@
 // );
 
 
-import React from "react";
-import ReactDOM from "react-dom/client";
-import Student from "./state1";
+// import React from "react";
+// import ReactDOM from "react-dom/client";
+// import Student from "./state1";
 
-const studentData = {
-  student1: {
-    name: "Rahul",
-    course: "BCA",
-    city: "Pune"
-  }
-};
+// const studentData = {
+//   student1: {
+//     name: "Rahul",
+//     course: "BCA",
+//     city: "Pune"
+//   }
+// };
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Student data={studentData} />);
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(<Student data={studentData} />);
 
 
