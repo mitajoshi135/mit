@@ -7,7 +7,8 @@ import ReactDOM from 'react-dom/client';
 // import Counter from './counter';
 //  import Students1 from './btnstate';
 // import Colorbtn from "./colorbtn";
-import Favcolor from './favcolor';
+// import Favcolor from './favcolor';
+import University from './unicontext';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <Home /> */}
@@ -15,7 +16,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <App /> */}
     {/* <Counter/> */}
     {/* <Colorbtn /> */}
-    <Favcolor />
+    {/* <Favcolor /> */}
+    <University/>
   </React.StrictMode>
 );
 

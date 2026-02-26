@@ -1,0 +1,14 @@
+<html>
+<body>
+<script>
+const numbers = [1, 2, 3, 4, 5, 10, 13, 17];
+const oddEvenCheck = numbers.map(num => ({
+  number: num,
+  type: num % 2 === 0 ? "Even" : "Odd"
+}));
+oddEvenCheck.forEach(item => {
+  document.write(`${item.number} → ${item.type}<br>`);
+});
+</script>
+</body>
+</html>

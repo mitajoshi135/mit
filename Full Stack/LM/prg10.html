@@ -1,0 +1,23 @@
+<html>
+<body>
+    <script>
+        function isPrime(n) {
+            if (n <= 1) return false;
+            if (n === 2) return true;
+            if (n % 2 === 0) return false;
+            for (let i = 3; i <= Math.sqrt(n); i += 2) {
+                if (n % i === 0) return false;
+            }
+            return true;
+        }
+        const numbers = [1, 2, 3, 4, 5, 10, 13, 17];
+        const primeCheck = numbers.map(num => ({
+            number: num,
+            isPrime: isPrime(num)
+        }));
+        primeCheck.forEach(item => {
+            document.write(`${item.number} → ${item.isPrime ? "Prime" : "Not Prime"}<br>`);
+        });
+    </script>
+</body>
+</html>
