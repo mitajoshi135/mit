@@ -1,0 +1,8 @@
+
+select * from albums where album_type = 'EP' or album_type = 'Single';
+
+select * from albums where album_type = 'EP' and total_tracks <= 8;
+
+select * from albums where album_type in ('Single','Studio'); 
+
+select * from artists where legal_name is null;

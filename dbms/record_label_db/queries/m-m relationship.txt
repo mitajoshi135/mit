@@ -1,0 +1,47 @@
+create table students(
+s_id integer generated always as identity primary key,
+name varchar(100) not null
+);
+
+create table courses(
+c_id integer generated always as identity primary key,
+name varchar(100) not null,
+fee decimal(10,2) not null
+);
+
+create table admission(
+a_id integer generated always as identity primary key,
+s_id integer not null,
+c_id integer not null,
+admission_date date default current_date,
+foreign key (s_id) references students(s_id),
+foreign key (c_id) references courses(c_id)
+);
+
+INSERT INTO students (name) VALUES
+('Alice Johnson'),
+('Bob Smith');
+
+INSERT INTO courses (name, fee) VALUES
+('Computer Science', 1500.00),
+('Mathematics', 1200.00);
+
+INSERT INTO admission (s_id, c_id) VALUES
+(1, 1),
+(1, 2),
+(2, 1),
+(2, 2);
+
+select * from students;
+select * from courses;
+select * from admission;
+
+select c.name,count(s.name),string_agg(s.name,','),sum(c.fee) from admission a
+join students s on a.s_id=s.s_id
+join courses c on a.c_id=c.c_id
+group by c.name having sum(c.fee)>1100;
+
+select c.name,s.name,c.fee from admission a
+join students s on a.s_id=s.s_id
+join courses c on a.c_id=c.c_id
+where c.fee>1200;
