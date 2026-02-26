@@ -1,0 +1,12 @@
+
+:: Step 1 - Create a new Vite project with React template
+npm create vite@latest my-react-app -- --template react
+
+:: Step 2 - Move into the project directory
+cd my-react-app
+
+:: Step 3 - Install dependencies
+npm install
+
+:: Step 4 - Start the development server
+npm run dev

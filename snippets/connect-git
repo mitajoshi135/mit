@@ -1,0 +1,20 @@
+# 1. Install Git (from git-scm.com) and verify
+git --version
+
+# 2. Configure Git
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+
+# 3. Initialize repo in your project folder
+git init
+
+# 4. Add remote GitHub repository
+git remote add origin https://github.com/username/repo-name.git
+
+# 5. Stage and commit files
+git add .
+git commit -m "Initial commit"
+
+# 6. Push to GitHub (set main branch)
+git branch -M main
+git push -u origin main
